@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Switch Statement</title>
+  </head>
+  <body>
+    <script>
+      // Ex. 1:
+      // Declare a variable fruit and assign it the name of a fruit.
+      const fruit = "banana";
+      // Write a switch statement that checks the fruit variable.
+      // Create cases for at least three fruits (e.g., "apple", "banana", "cherry") and log a message to the console for each, like "Apples are red".
+      switch (fruit) {
+        case "apple":
+          console.log("Apples are red");
+          break;
+        case "banana":
+          console.log("Banana is nutritious");
+          break;
+        case "cherry":
+          console.log("Cherry is a foreign fruit");
+          break;
+        // Include a default case that logs "Unknown fruit".
+        default:
+          console.log("Unknown fruit");
+          break;
+      }
+
+      // Ex. 2:
+      // Declare a variable dayNumber and assign it a number between 1 and 7.
+      const dayNumber = 2;
+      // Use a switch statement to convert dayNumber to the corresponding day of the week ("Monday" to "Sunday").
+      // Log the day of the week to the console.
+      // Ensure there's a default case to handle invalid inputs.
+      switch (dayNumber) {
+        case 1:
+          console.log("Monday");
+          break;
+        case 2:
+          console.log("Tuesday");
+          break;
+        case 3:
+          console.log("Wednesday");
+          break;
+        case 4:
+          console.log("Thursday");
+          break;
+        case 5:
+          console.log("Friday");
+          break;
+        case 6:
+          console.log("Saturday");
+          break;
+        case 7:
+          console.log("Sunday");
+          break;
+        default:
+          console.log("Invalid Input");
+      }
+
+      // Ex. 3:
+      //Declare a variable grade and assign it a letter grade (A, B, C, D, F).
+      const grade = "A";
+      // Write a switch statement to log a message based on the grade (e.g., "Excellent" for "A").
+      // Remember to handle all grades and include a default case for invalid grades.
+      switch (grade) {
+        case "A":
+          console.log("Excellent");
+          break;
+        case "B":
+          console.log("Very Good");
+          break;
+        case "C":
+          console.log("Good");
+          break;
+        case "D":
+          console.log("Average");
+          break;
+        case "F":
+          console.log("Failed");
+          break;
+        default:
+          console.log("Invalid Input.");
+      }
+
+      // Ex. 4:
+      // Declare three variables: operand1, operand2, and operator. Assign appropriate values to the operands and one of the following to the operator: "+", "-", "*", or "/".
+      let operand1 = 4;
+      let operand2 = 7;
+      let operator = "*";
+      let result = 0;
+      // Use a switch statement to perform the operation based on the operator variable.
+      switch (operator) {
+        case "+":
+          result = operand1 + operand2;
+          break;
+        case "-":
+          result = operand1 - operand2;
+          break;
+        case "*":
+          result = operand1 * operand2;
+          break;
+        case "/":
+          result = operand1 / operand2;
+          break;
+        default:
+          result = "Invalid Operator.";
+      }
+      // Log the result of the operation to the console.
+      console.log(`${operand1} ${operator} ${operand2} = ${result}`);
+
+      // Ex. 5:
+      // Declare a variable color and assign it a color name.
+      const color = "orange";
+      // Use a switch statement where multiple colors (e.g., "red", "pink", "orange") log "Warm colors", and others ("blue", "green", "purple") log "Cool colors".
+      switch (color) {
+        case "red":
+        case "pink":
+        case "orange":
+          console.log("Warm colors");
+          break;
+        case "green":
+        case "purple":
+        case "blue":
+          console.log("Cool colors");
+          break;
+        // Include a default case to log "Unknown color".
+        default:
+          console.log("Unknown Color.");
+      }
+
+      // Ex. 6:
+      // Declare two variables: month (string) and year (number).
+    </script>
+  </body>
+</html>

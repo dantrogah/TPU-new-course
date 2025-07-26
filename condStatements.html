@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Conditionals in JavaScript</title>
+  </head>
+  <body>
+    <!-- Ex 1 -->
+
+    <script>
+      // Ex 1:
+      // Declare a variable number and assign it a numerical value.
+      const number = -5;
+      // Use an if-else statement to check if the number is greater than 0. If true, log "Positive" to the console. Else, log "Negative".
+      if (number > 0) {
+        console.log("Positive");
+      } else {
+        console.log("Negative");
+      }
+
+      // EX 2:
+      // Declare a variable age and assign it a numerical value.
+      const age = 34;
+      // Use if-else if-else to categorize the age into: Child (< 12), Teenager (12 - 18), Adult (> 18).
+      result = "";
+      if (age < 12) {
+        result = "Child";
+      } else if (age >= 12 && age <= 18) {
+        result = "Teenager";
+      } else if (age > 18) {
+        result = "Adult";
+      }
+      // Log the age group to the console.
+      console.log(result);
+
+      // Ex 3:
+      // Declare a variable year.
+      const year = 2000;
+      // A year is a leap year if it's divisible by 4 but not by 100, unless it's also divisible by 400.
+      // Use an if-else statement to check these conditions and log whether the year is a leap year or not.
+      let isLeapYear = "";
+
+      if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+        isLeapYear = "Leap Year";
+      } else {
+        isLeapYear = "Not a Leap Year";
+      }
+      console.log(isLeapYear);
+
+      // Ex. 4
+      // Declare variables for storedUsername, storedPassword, inputUsername, and inputPassword.
+      const storedUsername = "mercy123";
+      const storedPassword = "123Mercy";
+      const inputUsername = "mercy123";
+      const inputPassword = "123Mercy";
+      // Use if-else to check if the input credentials match the stored credentials.
+      if (
+        storedUsername === inputUsername &&
+        storedPassword === inputPassword
+      ) {
+        console.log("Login Successful");
+      } else {
+        console.log("Login failed.");
+      }
+
+      // Ex. 5:
+      // Declare a variable grade.
+      let score = 89;
+      let grade = "";
+      // Use if-else if-else to assign letter grades based on grade value.
+      if (score >= 80) {
+        grade = "A";
+      } else if (score >= 70) {
+        grade = "B";
+      } else if (score >= 60) {
+        grade = "C";
+      } else if (score >= 50) {
+        grade = "D";
+      } else if (score >= 40) {
+        grade = "E";
+      } else {
+        grade = "F";
+      }
+      // Log the letter grade.
+      console.log(grade);
+
+      // Ex 6:
+      // Declare a variable num.
+      const num = 6;
+      // Use if-else and the modulus operator (%) to determine the parity.
+      if (num % 2 === 0) {
+        console.log("Even");
+      } else {
+        console.log("Odd");
+      }
+
+      // Ex. 7:
+      // Declare a variable userInput and assign it a value.
+      const userInput = String("");
+      // Use an if-else statement to check if userInput is an empty string.
+      // Log appropriate messages for both cases.
+
+      if (userInput.length === 0) {
+        console.log("Empty");
+      } else {
+        console.log("Not Empty");
+      }
+
+      // Ex 8:
+      // Declare a variable purchaseAmount.
+      let purchaseAmount = 60;
+      let discount = 0;
+      // Use if-else if-else to apply discounts: 10% for amounts > $100 5% for amounts > $50 and ≤ $100 No discount otherwise.
+      if (purchaseAmount > 50) {
+        discount = purchaseAmount * 0.05;
+      } else if (purchaseAmount < 100) {
+        discount = 0;
+      } else if (purchaseAmount > 100) {
+        discount = purchaseAmount * 0.1;
+      }
+      // Log the final amount after discount.
+      let finalAmount = purchaseAmount - discount;
+      console.log(finalAmount);
+
+      // Ex 9:
+      // Declare a variable trafficLight and assign it one of the colors: "green", "yellow", or "red".
+      const trafficLight = "red";
+      let trafficResult = "";
+      // Use if-else if-else to log actions based on the light (e.g., "Go", "Caution", "Stop").
+      if (trafficLight === "green") {
+        trafficResult = "Go";
+      } else if (trafficLight === "yellow") {
+        trafficResult = "Caution";
+      } else if (trafficLight === "red") {
+        trafficResult = "Stop";
+      }
+      console.log(trafficResult);
+
+      // Ex 10:
+      // Declare a variable password and assign a string value.
+      const password = "elorm245";
+      let passwordStatus = "";
+      // Use if-else if-else to rate password strength: Weak (< 6 characters), Medium (6 - 10 characters), Strong (> 10 characters).
+      const passwordLength = password.length;
+      if (passwordLength < 6) {
+        passwordStatus = "Weak";
+      } else if (passwordLength >= 6 && passwordLength <= 10) {
+        passwordStatus = "Medium";
+      } else if (passwordLength > 10) {
+        passwordStatus = "Strong";
+      }
+      // Log the strength rating.
+      console.log(passwordStatus);
+    </script>
+  </body>
+</html>

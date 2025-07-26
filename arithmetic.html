@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arithmetic Operations</title>
+  </head>
+  <body>
+    <script>
+      // Declare four variables a, b, c, and d, assigning numerical values to each.
+      let a = 20;
+      let b = 10;
+      let c = 8;
+      let d = 6;
+      // Calculate the sum, difference, product, and quotient of a and b.
+      let sum = a + b;
+      let difference = a - b;
+      let product = a * b;
+      let quotient = a / b;
+      // Use console.log() to display each result with a descriptive message.
+      console.log("Sum is " + sum);
+      console.log("Difference is " + difference);
+      console.log("Product is " + product);
+      console.log("Quotient is " + quotient);
+      // Create a function calculateArea that takes two parameters: length and width.
+      function calculateArea(length, width) {
+        // Inside the function, calculate the area and return the result.
+        return length * width;
+      }
+      // Call the function with different values and display the results using console.log().
+      const area = calculateArea(4, 5);
+      console.log(`Area is ${area}`);
+      // Write a function celsiusToFahrenheit that takes a Celsius temperature as its parameter.
+      function celsiusToFahrenheit(celsiusTemp) {
+        // Convert the Celsius temperature to Fahrenheit using the formula F = C * 9/5 + 32.
+        const fahrenheit = celsiusTemp * (9 / 5) + 32;
+        // Return the Fahrenheit temperature and use console.log() to display the result.
+        return fahrenheit;
+      }
+
+      console.log("Celsius to Fahrenheit = " + celsiusToFahrenheit(100));
+
+      // Declare a variable count with an initial value of 0.
+      let count = 0;
+      // Use the increment operator (++) to increase the value of count and output the result.
+      count++;
+      console.log("Count = " + count);
+      // Use the decrement operator (--) to decrease the value of count and output the result.
+      count--;
+      console.log("Count = " + count);
+      // Declare a variable total and assign a numerical value.
+      let total = 80;
+      // Use compound assignment operators (+=, -=, *=, /=) to modify the value of total in different ways.
+      total += 20;
+
+      console.log(total);
+      // Create a function calculateCircumference that takes the radius of a circle as a parameter.
+      function calculateCircumference(radius) {
+        // Calculate the circumference using the formula C = 2 * π * radius. Use Math.PI for π.
+        return 2 * Math.PI * radius;
+      }
+      // Return the result and display it using console.log().
+      console.log(`Circumference = ${calculateCircumference(20)}`);
+      // Declare an array of numbers.
+      const numbers = [23, 45, 40, 11];
+      // Iterate over the array using a loop.
+      for (let i = 0; i < numbers.length; i++) {
+        // Use the modulus operator (%) to check if each number is even or odd.
+        // Output a message for each number indicating whether it's even or odd.
+        const result =
+          numbers[i] % 2 === 0
+            ? `${numbers[i]} is even`
+            : `${numbers[i]} is odd.`;
+        console.log(result);
+      }
+      // Declare a base number and an exponent.
+      const baseNumber = 5;
+      const exponent = 3;
+      // Use the exponentiation operator (**) to calculate the power.
+      console.log(
+        // Output the result using console.log().
+        `${baseNumber} to the power ${exponent} = ${baseNumber ** exponent}`
+      );
+      // Explore at least three Math methods such as Math.sqrt(), Math.pow(), and Math.abs().
+      // Apply these methods to appropriate numerical values.
+      // Display the results using console.log().
+
+      const squareRoot = Math.sqrt(9);
+      console.log(squareRoot);
+
+      const power = Math.pow(5, 2);
+      console.log(power);
+
+      console.log(Math.abs(-23));
+      // Write a function calculateCompoundInterest that accepts the principal amount, interest rate (as a decimal), compounding frequency per year, and time in years.
+      function calculateCompoundInterest(
+        principal,
+        rate,
+        compoundPerYear,
+        time
+      ) {
+        // Use the compound interest formula A = P(1 + r/n)^(nt) to calculate the final amount.
+        const finalAmount =
+          principal *
+          (1 + (rate / compoundPerYear) ** (compoundPerYear * time));
+        // Return the calculated amount and use console.log() to display it.
+        return finalAmount;
+      }
+
+      const finalAmount = calculateCompoundInterest(100, 2.1, 2, 1);
+      console.log(finalAmount.toFixed(2));
+    </script>
+  </body>
+</html>

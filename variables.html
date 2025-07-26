@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable</title>
+  </head>
+  <body>
+    <script>
+      // Declare a variable name using let and assign your name to it.
+      let myName = "Daniel";
+      // Declare a constant birthYear using const and assign your birth year to it.
+      const birtYear = 2000;
+      // Use var to declare hobby and assign a string representing your hobby.
+      var hobby = "Playing the Piano";
+      // Create a variable message that holds the string "Hello, World!".
+      const message = "Hello, World!";
+      // Output the variable message to the console using console.log().
+      console.log(message);
+      // Declare two variables, firstName and lastName, and assign your first and last name to them.
+      const firstName = "Timothy";
+      const lastName = "Owusu";
+      // Concatenate firstName and lastName to create a full name, and store it in a new variable fullName.
+      const fullName = firstName + " " + lastName;
+      // Output fullName using console.log().
+      console.log(fullName);
+      // Declare two variables a and b, assigning numerical values to each.
+      const a = 5;
+      const b = 6;
+      // Perform addition, subtraction, multiplication, and division on these variables and store each result in separate variables.
+      const add = a + b;
+      const substract = a - b;
+      const multiply = a * b;
+      const divide = a / b;
+      // Output the results using console.log().
+      console.log("Addition result: " + add);
+      console.log("Result of Substracton: " + substract);
+      console.log("Result of Multiplication: " + multiply);
+      console.log("Result of Division: " + divide);
+      // Declare an array favoriteFoods containing strings of at least three of your favorite foods.
+      const favoriteFoods = ["Jollof", "Fried Rice", "Fried Yam"];
+      // Use a for loop to output each element of favoriteFoods to the console.
+      for (let i = 0; i < favoriteFoods.length; i++) {
+        console.log(favoriteFoods[i]);
+      }
+      // Create variables for user, score, and game, assigning appropriate values (e.g., a name, a numerical score, and a game title).
+      const user = "Wilfred";
+      const score = 2;
+      const game = "Roll Die";
+      const finalMessage = `"User ${user} scored ${score} in ${game}!".`;
+      // Output this message using console.log().
+      console.log(finalMessage);
+      // Use prompt() to collect the user's name and store it in a variable.
+      const userName = prompt("Enter Name: ");
+      // Create a greeting message using the collected name.
+      const greetings = "Good morning " + userName;
+      // Display the greeting message using alert().
+      alert(greetings);
+      // Declare a variable numString containing a number as a string (e.g., "123").
+      let numString = "123";
+      // Convert numString to an actual number and store it in a new variable num.
+      stringToNum = Number(numString);
+      // Output both variables to the console, noting the difference.
+      console.log(numString + " " + typeof numString);
+      console.log(stringToNum + " " + typeof stringToNum);
+      // Create an object book that includes properties for title, author, and yearPublished.
+      const book = {
+        title: "Key facts",
+        author: "Adams Smith",
+        yearPublished: 2017,
+      };
+      // Use console.log() to output each property of the book object in a meaningful sentence.
+      console.log(`${book.title} (${book.yearPublished}) by ${book.author}`);
+      // Write a function calculateAge that takes a birth year as an argument and returns the age.
+      function calculateAge(birthYear) {
+        return 2025 - birthYear;
+      }
+      // Call calculateAge with a birth year, store the result in a variable, and output it using console.log().
+      const useAge = calculateAge(1980);
+      console.log(`User age is ${useAge}`);
+    </script>
+  </body>
+</html>
