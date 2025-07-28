@@ -133,6 +133,128 @@
 
       // Ex. 6:
       // Declare two variables: month (string) and year (number).
+      const month = "february";
+      const year = 2025;
+      let monthResult = "";
+      // Use a switch statement on month to determine the number of days in that month.
+      switch (month) {
+        case "april":
+        case "june":
+        case "september":
+          monthResult = "30 days";
+          break;
+        case "january":
+        case "march":
+        case "may":
+        case "july":
+        case "august":
+        case "october":
+        case "november":
+        case "december":
+          monthResult = "31 days";
+          break;
+        case "february":
+          if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+            monthResult = "29 days";
+          } else {
+            monthResult = "28 days";
+          }
+          break;
+        default:
+          monthResult = "Invalid months";
+      }
+      // Log the number of days in the month.
+      console.log(monthResult);
+
+      // Ex. 7:
+      // Declare a variable role with possible values like "admin", "editor", "subscriber".
+      const role = "admin";
+      // Use a switch statement to log different access levels based on the user's role.
+      switch (role) {
+        case "admin":
+          console.log("admin");
+          break;
+        case "editor":
+          console.log("admin");
+          break;
+        case "subscriber":
+          console.log("admin");
+          break;
+        // Ensure there's a default case for unknown roles.
+        default:
+          console.log("Unknown role");
+      }
+
+      // Ex. 8
+      // Declare a variable theme with values like "dark", "light", "neon".
+      const theme = "dark";
+      // Use a switch statement to apply different background and text colors for each theme.
+      // Log the color choices to the console.
+      switch (theme) {
+        case "dark":
+          console.log("Dark Theme");
+          break;
+        case "light":
+          console.log("Light Theme");
+          break;
+        case "neon":
+          console.log("Neon Theme");
+          break;
+        default:
+          console.log("Unspecified Theme");
+      }
+
+      // Ex. 9:
+      // Declare a variable command with possible command values like "start", "stop", "restart".
+      // Use a switch statement to log what each command should do.
+      // Include a default case for unknown commands.
+      const command = "start";
+      switch (command) {
+        case "start":
+          console.log("Start");
+          break;
+        case "stop":
+          console.log("Stop");
+          break;
+        case "restart":
+          console.log("Restart");
+          break;
+        default:
+          console.log("Unknown Option");
+      }
+
+      // Ex. 10:
+      // Declare a variable score and assign it a number between 1 and 100.
+      // Convert the score into a grade range (e.g., 90-100 is A, 80-89 is B).
+      // Due to the syntax of the switch statement, you may need to use true and multiple case checks that evaluate to true (e.g., case score >= 90 && score <= 100:).
+
+      const score = 90;
+      let scoreGrade = "";
+      switch (true) {
+        case score >= 90 && score < 100:
+          scoreGrade = "A";
+          break;
+        case score >= 80 && score <= 89:
+          scoreGrade = "B";
+          break;
+        case score >= 70 && score <= 79:
+          scoreGrade = "C";
+          break;
+        case score >= 60 && score <= 69:
+          scoreGrade = "D";
+          break;
+        case score >= 50 && score <= 59:
+          scoreGrade = "E";
+          break;
+        case score >= 40 && score <= 49:
+          scoreGrade = "F";
+          break;
+        default:
+          scoreGrade = "IC";
+      }
+
+      // Log the grade range to the console.
+      console.log(scoreGrade);
     </script>
   </body>
 </html>
