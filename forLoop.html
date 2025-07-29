@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Loop</title>
+    <style>
+      .report-card {
+        color: rgb(70, 15, 15);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="post"></div>
+
+    <script>
+      const students = [
+        { name: "James", grades: { math: 89, english: 90, science: 88 } },
+        { name: "elorm", grades: { math: 60, english: 70, science: 80 } },
+        { name: "nikka", grades: { math: 75, english: 80, science: 78 } },
+        { name: "linda", grades: { math: 60, english: 70, science: 65 } },
+        { name: "grace", grades: { math: 76, english: 84, science: 82 } },
+      ];
+
+      function calculateAverage(grades) {
+        let total = 0;
+        let count = 0;
+
+        for (let subject in grades) {
+          total += grades[subject];
+          count++;
+        }
+
+        return total / count;
+      }
+
+      function generateReportCard(students) {
+        let html = "<div>";
+        for (let i = 0; i < students.length; i++) {
+          let average = calculateAverage(students[i].grades);
+          let status = average >= 70 ? "Passing" : "Failing";
+          html += `
+            <div>
+              <h2>${students[i].name}</h2>
+              <p>Average Grade: ${average.toFixed(1)}</p>
+              <p>Status: ${status}</p>
+            </div>
+          `;
+        }
+        html += "</>";
+
+        return html;
+      }
+
+      document.querySelector(".post").innerHTML = generateReportCard(students);
+    </script>
+  </body>
+</html>
