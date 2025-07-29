@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For Loop Exercise</title>
+  </head>
+  <body>
+    <div class="employees"></div>
+    <script>
+      // Ex 1:
+      // Objective: Write a for loop to print all even numbers from 2 to 100. Ensure each number is printed on a new line in the console.
+      for (let i = 2; i <= 100; i += 2) {
+        console.log(i);
+      }
+
+      // Ex 2:
+      // Objective: Create a for loop that sums all the elements of a given array of integers. Display the sum after the loop completes. Test the loop with the array [10, 20, 30, 40, 50].
+      const points = [10, 20, 30, 40, 50];
+      let total = 0;
+      for (let i = 0; i < points.length; i++) {
+        total += points[i];
+      }
+      console.log(total);
+
+      // Ex 3:
+      // Objective: Use a for loop to count how many times a specific character appears in a string. For example, count how many times the letter 'a' appears in the string "banana". Print the count to the console.
+      const testWord = "banana";
+      console.log(testWord.split("a").length - 1);
+
+      // Ex 4:
+      // Objective: Write a for loop that processes a list of names (given as an array) and prints each name with its corresponding length. Example array: ["Alice", "Bob", "Alexander"].
+      const employees = ["Alice", "Bob", "Alexander"];
+      let html = "<div>";
+      for (let i = 0; i < employees.length; i++) {
+        html += `<p>${employees[i]} --- ${employees[i].length}</p>`;
+      }
+      html += "</div>";
+
+      document.querySelector(".employees").innerHTML = html;
+
+      // Ex 5:
+      // Objective: Implement a for loop that finds the maximum number in an array of numbers. Test your loop with the array [45, 78, 22, 89, 94, 3, 99] and print the highest number.
+      const scores = [45, 78, 102, 22, 89, 94, 3, 99];
+      let maxNumber = 0;
+      for (let i = 0; i < scores.length; i++) {
+        maxNumber = maxNumber < scores[i] ? scores[i] : maxNumber;
+      }
+      console.log(maxNumber);
+    </script>
+  </body>
+</html>
