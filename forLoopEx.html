@@ -47,6 +47,40 @@
         maxNumber = maxNumber < scores[i] ? scores[i] : maxNumber;
       }
       console.log(maxNumber);
+
+      // Ex 6:
+      // Objective: Write a JavaScript function using two nested for loops to add two 2D matrices (arrays of arrays) of the same dimensions. For simplicity, test with 3x3 matrices like:
+      // javascriptCopy code let matrix1 = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+      // let matrix2 = [[9, 8, 7], [6, 5, 4], [3, 2, 1]];
+      let result = [];
+
+      let matrix1 = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+      ];
+      let matrix2 = [
+        [9, 8, 7],
+        [6, 5, 4],
+        [3, 2, 1],
+      ];
+      for (let i = 0; i < matrix1.length; i++) {
+        let row = [];
+        for (let j = 0; j < matrix1[i].length; j++) {
+          row.push(matrix1[i][j] + matrix2[i][j]);
+        }
+        result.push(row);
+      }
+
+      console.log(result);
+
+      // Ex 7:
+      // Objective: Use a for loop to create a multiplication grid (table) from 1x1 to 10x10. Each line should represent a row in the grid, formatted like "1  1 = 1, 1  2 = 2, ..., 1 * 10 = 10".
+
+      let num = 2;
+      for (let i = 1; i <= 10; i++) {
+        console.log(`${num} * ${i} = ${num * i} `);
+      }
     </script>
   </body>
 </html>

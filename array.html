@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arrays</title>
+  </head>
+  <body>
+    <script>
+      // Ex 1:
+      // Objective: Merge two arrays [1, 2, 3] and [4, 5, 6] using the concat method and print the resulting array.
+      let array1 = [1, 2, 3];
+      let array2 = [4, 5, 6];
+      let resultingArray = array1.concat(array2);
+      console.log(resultingArray);
+
+      // EX 2:
+      // Objective: Use the find method to locate the first element greater than 10 in the array [3, 5, 7, 9, 11, 13]. Print the found element.
+      const array3 = [3, 5, 7, 9, 11, 13];
+      const found = array3.find((element) => element > 10);
+      console.log(found);
+
+      // Ex. 3
+      // Objective: Use the filter method to create a new array containing only the even numbers from the array [12, 5, 8, 130, 44]. Print the new array.
+      const array4 = [12, 5, 8, 130, 44];
+      const filteredArray = array4.filter((element) => element % 2 === 0);
+      console.log(filteredArray);
+
+      // Ex. 4:
+      // Objective: Use the map method to create a new array that contains each number from the array [1, 2, 3, 4, 5] multiplied by 3. Print the new array.
+      const array5 = [1, 2, 3, 4, 5];
+      const multipliedByThree = array5.map((element) => element * 3);
+      console.log(multipliedByThree);
+
+      // Ex 5:
+      // Objective: Utilize the reduce method to find the sum of the numbers in the array [1, 2, 3, 4, 5]. Print the sum.
+      const array6 = [1, 2, 3, 4, 5];
+      // let total = 0;
+      const sumWithInitial = array6.reduce(
+        (total, element) => total + element,
+        0
+      );
+
+      console.log("Total is ", sumWithInitial);
+
+      // Ex 6:
+      // Objective: Given the array [13, 18, 20, 25, 30], use the some method to check if there are any numbers greater than 26, and use the every method to check if all numbers are even. Print the results for both checks.
+      const array7 = [13, 18, 20, 25, 30];
+      const greaterThan26 = array7.some((element) => element > 26);
+      console.log(greaterThan26);
+
+      const allEvenNumbers = array7.every((element) => element % 2 === 0);
+      console.log(allEvenNumbers);
+
+      // Ex 7:
+      // Objective: Use the reverse method to reverse the array ['one', 'two', 'three']. Print the reversed array.
+      const array8 = ["one", "two", "three"];
+      const reverseArray = array8.reverse();
+      console.log(reverseArray);
+
+      // Ex 8:
+      // Objective: Use the sort method to sort the array [23, 1, 6, 12, 5] in ascending order. Ensure the sort works correctly for numerical values (not lexicographical). Print the sorted array.
+      const array9 = [23, 1, 6, 12, 5];
+      const sortedArray = array9.sort((a, b) => a - b);
+      console.log(sortedArray);
+    </script>
+  </body>
+</html>
