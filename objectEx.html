@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Object Exercises</title>
+  </head>
+  <body>
+    <div class="person"></div>
+
+    <script>
+      // Ex 1:
+      // Task: Define a JavaScript object named person with properties for firstName, lastName, and age. Use console.log to print the properties.
+      const person = {
+        firstName: "Vanessa",
+        lastName: "Damalie",
+        age: 31,
+      };
+
+      let html = `
+      <p>First Name: ${person.firstName}</p>
+      <p>Last Name: ${person.lastName}</p>
+      <p>Age: ${person.age}</p>
+      `;
+
+      document.querySelector(".person").innerHTML = html;
+
+      // Ex 2:
+      // Task: Create an object representing a car with properties like make, model, and year. Display each property separately in the console.
+      const car = {
+        make: "Hyundai",
+        model: "234J",
+        year: 2025,
+      };
+
+      console.log(`Make: ${car.make}\nModel: ${car.model}\nYear: ${car.year}`);
+
+      // Ex 3:
+      // Task: Create an object for a book with title, author, and publishedYear. Change the publishedYear and print the updated object.
+      const book = {
+        title: "Introduction to Programming",
+        author: "Daniel Trogah",
+        publishedYear: 2025,
+      };
+
+      book.publishedYear = 2024;
+
+      console.log(book);
+
+      // Ex 4:
+      // Task: Define an object for a student with properties name and studyYear, and a method incrementYear that increases the studyYear by one.
+      const student = {
+        name: "Vanessa Ahiatrogah",
+        studyYear: 2018,
+        incrementYear() {
+          this.studyYear += 1;
+        },
+      };
+
+      student.incrementYear();
+      console.log(student.studyYear);
+    </script>
+  </body>
+</html>
