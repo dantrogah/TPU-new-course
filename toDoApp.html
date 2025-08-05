@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do-List</title>
+  </head>
+  <body>
+    <h1>To do-list</h1>
+    <input type="text" id="newTask" placeholder="Add a new Task" />
+    <button onclick="addTask()">Add Task</button>
+    <ul id="tasksList"></ul>
+
+    <script>
+      let task = {
+        items: [],
+        addTask: function (task) {
+          this.items.push(task);
+          this.updateDisplay();
+        },
+        removeTask: function (index) {
+          this.items.splice(index, 1);
+          this.updateDisplay();
+        },
+        updateDisplay: function () {
+          let list = document.getElementById("tasksList");
+          list.innerHTML = "";
+          this.items.forEach((task, index) => {
+            list.innerHTML += `
+              <li>${task} <button onclick='task.removeTask(${index})'>Remove</button></li>
+            `;
+          });
+        },
+      };
+
+      function addTask() {
+        let taskInput = document.getElementById("newTask");
+        if (taskInput.value) {
+          task.addTask(taskInput.value);
+          taskInput.value = "";
+        }
+      }
+    </script>
+  </body>
+</html>

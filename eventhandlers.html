@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event Handlers</title>
+  </head>
+  <body>
+    <h1>Event Handlers</h1>
+    <button onclick="alert('Button clicked!')">Click Me!</button>
+    <img id="changeBorder" src="./img/logo.png" alt="logo" />
+
+    <script>
+      // Ex 1:
+      // Task: Create a button in HTML. Use JavaScript to display an alert that says "Button clicked!" whenever the button is clicked.
+
+      // Ex 2:
+      // Task: Create an image in your HTML document. Write JavaScript that changes the image’s border color when the mouse hovers over it.
+
+      const imageElement = document.querySelector("#changeBorder");
+      imageElement.addEventListener("mouseover", function () {
+        imageElement.style.border = "2px solid black";
+      });
+    </script>
+  </body>
+</html>
