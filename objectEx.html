@@ -7,7 +7,8 @@
   </head>
   <body>
     <div class="person"></div>
-
+    <p></p>
+    <div class="smartphone"></div>
     <script>
       // Ex 1:
       // Task: Define a JavaScript object named person with properties for firstName, lastName, and age. Use console.log to print the properties.
@@ -62,11 +63,174 @@
 
       // Ex 5:
       // Task: Create an object representing a smartphone with properties brand, model, and dimensions (an object with properties height, width, and depth).
-      const smartphone = {
+      const smartphone2 = {
         brand: "Nokki",
         model: "Nokki 314",
-        dimensions: { height: 4, width: 2, depth: 2 },
+        // dimensions: { height: 4, width: 2, depth: 2 },
       };
+
+      // Ex 5:
+      // Task: Define an object with several properties. Write a script that loops through the properties and prints out the property names and their values.
+      let html2 = "";
+      const smartphone = {
+        brand: "Samsung",
+        model: "Galaxy s21",
+        ManDate: "August 21",
+        dimensions: {
+          height: "151.7mm",
+          width: "71.2mm",
+          depth: "7.9mm",
+        },
+      };
+
+      // for (let key in phone) {
+      //   if (phone.hasOwnProperty(key)) {
+      //     if (typeof phone[key] === "object" && phone[key] !== null) {
+      //       for (let subkey in phone[key]) {
+      //         if (phone[key].hasOwnProperty(subkey)) {
+      //           html2 += `
+      //            <p>${subkey}: ${phone[key][subkey]}</p>
+      //           `;
+      //         }
+      //       }
+      //     } else {
+      //       html2 += `
+      //         <p>${key}: ${phone[key]}</p>
+      //       `;
+      //     }
+      //   }
+      // }
+
+      for (let key in smartphone) {
+        if (smartphone.hasOwnProperty(key)) {
+          if (typeof smartphone[key] === "object" && smartphone[key] !== null) {
+            // If the property is an object, loop through its properties
+            console.log(`${key}:`);
+            for (let subKey in smartphone[key]) {
+              if (smartphone[key].hasOwnProperty(subKey)) {
+                console.log(`  ${subKey}: ${smartphone[key][subKey]}`);
+              }
+            }
+          } else {
+            // Otherwise, just print the property and value
+            console.log(`${key}: ${smartphone[key]}`);
+          }
+        }
+      }
+
+      // Ex 7:
+      // Task: Create an array of objects where each object represents a different pet and has properties for type, name, and age. Print each pet's information.
+      const pets = [
+        { type: "Household", name: "Bol", age: 2 },
+        { type: "Household", name: "Tom", age: 1 },
+        { type: "Household", name: "Zilla", age: 1.5 },
+      ];
+
+      for (let i = 0; i < pets.length; i++) {
+        for (let key in pets[i]) {
+          if (pets[i].hasOwnProperty(key)) {
+            console.log(`${key} ${pets[i][key]}`);
+          }
+        }
+        console.log("-------------");
+      }
+
+      // Ex 8:
+      // Task: Define an object with properties name, occupation, and age. Delete the occupation property and print the object before and after the deletion.
+      const employee = {
+        name: "James Smith",
+        occupation: "Web Developer",
+        age: 45,
+      };
+
+      console.log(
+        `Name: ${employee.name}\nOccupation: ${employee.occupation}\nAge: ${employee.age}`
+      );
+
+      delete employee.occupation;
+
+      console.log(`Name: ${employee.name}\nAge: ${employee.age}`);
+
+      // Ex 9:
+      // Task: Create two different objects that represent two different books with properties title and author. Write a function to compare if both books are written by the same author.
+      const book1 = {
+        title: "Internet Marketing",
+        author: "John Doe",
+      };
+
+      const book2 = {
+        title: "Artificial Intelligence",
+        author: "John Doe",
+      };
+
+      function compareAuthor(book1, book2) {
+        if (book1.author === book2.author) {
+          console.log("Same Author");
+        } else {
+          console.log("Different Author");
+        }
+      }
+
+      compareAuthor(book1, book2);
+
+      // Ex 10:
+      // Task: Create an object that represents a library with properties for name, location, and books (an array of books, each with a title, author, and available status). Write functions to add a book to the library, check out a book (change its available status), and list all available books.
+
+      const library = {
+        name: "Central City Library",
+        location: "Downtown",
+        books: [
+          { title: "1984", author: "George Orwell", available: true },
+          {
+            title: "To kill a Mockingbird",
+            author: "Harper Lee",
+            available: true,
+          },
+          {
+            title: "The Great Gatsby",
+            author: "F. Scott Fitzgerald",
+            available: false,
+          },
+        ],
+
+        // Function to add a new book
+        addBook: function (title, author) {
+          this.books.push({ title, author, available: true });
+          console.log(`Added book: "${title}" by ${author}`);
+        },
+
+        // Function to check out a book
+        checkOutBook: function (title) {
+          const book = this.books.find(
+            (b) => b.title.toLocaleLowerCase() === title.toLocaleLowerCase()
+          );
+          if (book) {
+            if (book.available) {
+              book.available = false;
+              console.log(`You checked out "${book.title}"`);
+            } else {
+              console.log(`"${book.title}" is already checked out.`);
+            }
+          } else {
+            console.log(`Book titled "${title}" not found`);
+          }
+        },
+
+        // Function to list all available books
+        listAvailableBooks: function () {
+          console.log("Available books:");
+          this.books.forEach((book) => {
+            if (book.available) {
+              console.log(`-"${book.title}" by ${book.author}`);
+            }
+          });
+        },
+      };
+
+      library.addBook("Brave New World", "Aldous Huxley");
+      library.checkOutBook("1984");
+
+      library.listAvailableBooks();
     </script>
   </body>
 </html>
