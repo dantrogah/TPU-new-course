@@ -4,11 +4,64 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Event Handlers</title>
+    <style>
+      .parent-div {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+      }
+
+      .inner-text {
+        width: 50px;
+        height: 50px;
+        background-color: white;
+      }
+
+      #outer {
+        background-color: lightcoral;
+        padding: 40px;
+      }
+
+      #middle {
+        background-color: lightgreen;
+        padding: 30px;
+      }
+
+      #inner {
+        background-color: lightblue;
+        padding: 20px;
+      }
+    </style>
   </head>
   <body>
+    <div id="outer">
+      Outer
+      <div id="middle">
+        Middle
+        <div id="inner">Inner</div>
+      </div>
+    </div>
     <h1>Event Handlers</h1>
     <button onclick="alert('Button clicked!')">Click Me!</button>
     <img id="changeBorder" src="./img/logo.png" alt="logo" />
+    <p class="para">
+      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia incidunt
+      tenetur illum, non reprehenderit aperiam?
+    </p>
+    <button class="btn">Click Me!</button>
+    <button class="btn">Click Me!</button>
+    <button class="btn">Click Me!</button>
+    <input type="text" class="input-el" />
+    <p class="keypress-enter"></p>
+    <form action="#">
+      <input type="text" class="form-input-el" />
+      <button class="form-btn">Submit</button>
+    </form>
+    <p class="output"></p>
+
+    <div class="parent-div">
+      <div class="inner-text"></div>
+    </div>
 
     <script>
       // Ex 1:
@@ -21,6 +74,86 @@
       imageElement.addEventListener("mouseover", function () {
         imageElement.style.border = "2px solid black";
       });
+
+      // Ex 3:
+      // Task: Add an event listener to a paragraph. When the paragraph is clicked, change its text content to "I was clicked!".
+      const paragraphElement = document.querySelector(".para");
+      paragraphElement.addEventListener("click", () => {
+        paragraphElement.innerText = "I was clicked!";
+      });
+
+      // Ex 4:
+      // Task: Create three buttons with the text "Click me!". Use a single event handler to display an alert showing which button was clicked based on its index.
+      const buttons = document.querySelectorAll(".btn");
+      buttons.forEach((obj, index) => {
+        obj.addEventListener("click", function () {
+          // console.log(`${index}`);
+          if (index === 0) {
+            alert("You clicked on the first button.");
+          } else if (index === 1) {
+            alert("You clicked on the second button.");
+          } else if (index === 2) {
+            alert("You clicked on the third button");
+          }
+        });
+      });
+
+      // Ex 5:
+      // Task: Capture and log every keypress in an input field. When the enter key is pressed, display the content of the input in a dedicated paragraph.
+      const inputElement = document.querySelector(".input-el");
+      inputElement.addEventListener("keypress", function (e) {
+        console.log(e.key);
+        if (e.key === "Enter") {
+          document.querySelector(".keypress-enter").innerHTML =
+            inputElement.value;
+          inputElement.value = "";
+        }
+      });
+
+      // Ex 6:
+      // Task: Create a form with a name input and a submit button. Prevent the form’s default submission using JavaScript and instead display the entered name below the form when submitted.
+      const formElement = document.querySelector(".form-input-el");
+      const btnElement = document.querySelector(".form-btn");
+      const outputParagraph = document.querySelector(".output");
+
+      btnElement.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const name = formElement.value.trim();
+
+        if (name) {
+          outputParagraph.textContent = formElement.value;
+        }
+      });
+
+      // Ex 7:
+      // Task: Demonstrate event bubbling and capturing. Create nested div elements, each with a different background color. Use console.log to show how events bubble up or are captured.
+      document.getElementById("outer").addEventListener(
+        "click",
+        function () {
+          console.log("Outer DIV (capturing)");
+        },
+        true
+      );
+
+      document.getElementById("middle").addEventListener(
+        "click",
+        function () {
+          console.log("Middle DIV (capturing)");
+        },
+        true
+      );
+
+      document.getElementById("inner").addEventListener(
+        "click",
+        function () {
+          console.log("Inner DIV (capturing)");
+        },
+        true
+      );
+
+      // Ex 9:
+      // Task: Define a custom event called newUser and dispatch it when a user fills out a form. Listen for this event and update a list on the page with the new user's data.
     </script>
   </body>
 </html>

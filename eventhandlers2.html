@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Event: newUser</title>
+  </head>
+  <body>
+    <h2>Register User</h2>
+
+    <form id="userForm">
+      <input type="text" id="username" placeholder="Enter name" required />
+      <button type="submit">Add User</button>
+    </form>
+
+    <ul id="userList">
+      <!-- New users will be added here -->
+    </ul>
+
+    <script>
+      const form = document.getElementById("userForm");
+      const input = document.getElementById("username");
+      const userList = document.getElementById("userList");
+
+      // Listen for the custom 'newUser' event
+      document.addEventListener("newUser", function (event) {
+        const name = event.detail.name;
+
+        const li = document.createElement("li");
+        li.textContent = name;
+        userList.appendChild(li);
+      });
+
+      // Form submission
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = input.value.trim();
+        if (name) {
+          const event = new CustomEvent("newUser", {
+            detail: { name: name },
+          });
+          document.dispatchEvent(event);
+          input.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>

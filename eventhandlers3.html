@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interactive Quiz</title>
+    <style>
+      .quiz-container {
+        padding: 20px;
+        max-width: 400px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+      }
+
+      .question {
+        font-size: 18px;
+        margin-bottom: 15px;
+      }
+
+      .answers button {
+        display: block;
+        margin: 5px 0;
+        padding: 10px;
+        width: 100%;
+        cursor: pointer;
+      }
+
+      .feedback {
+        margin-top: 15px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="quiz-container" id="quiz">
+      <div class="question">What is the capital of France?</div>
+      <div class="answers">
+        <button data-answer="Paris">Paris</button>
+        <button data-answer="Madrid">Madrid</button>
+        <button data-answer="Rome">Rome</button>
+        <button data-answer="Berlin">Berlin</button>
+      </div>
+      <div class="feedback" id="feedback"></div>
+    </div>
+
+    <script>
+      // Task: Build an interactive quiz where each answer option is a button. Use event delegation on the quiz container to handle clicks on the buttons, determine if the selected answer is correct, and display feedback to the user.
+
+      const quiz = document.getElementById("quiz");
+      const feedback = document.getElementById("feedback");
+      const correctAnswer = "Paris";
+
+      // Event delegation on quiz container
+      quiz.addEventListener("click", function (event) {
+        if (event.target.tagName === "BUTTON") {
+          const selected = event.target.getAttribute("data-answer");
+          if (selected === correctAnswer) {
+            feedback.textContent = "✅ Correct!";
+            feedback.style.color = "green";
+          } else {
+            feedback.textContent = "❌ Wrong! Try again.";
+            feedback.style.color = "red";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
