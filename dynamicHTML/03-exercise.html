@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 3</title>
+    <style>
+      span {
+        display: inline-block;
+        border: 2px solid lightblue;
+        padding: 10px;
+        margin: 10px;
+        cursor: pointer;
+        border-radius: 8px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="red">Red</span>
+    <span class="green">Green</span>
+    <span class="blue">Blue</span>
+
+    <script>
+      // Task: Create three <span> elements each containing a different color name (e.g., Red, Green, Blue). Add JavaScript that changes the text color of each span to the color it names when hovered over.
+
+      const redSpan = document.querySelector(".red");
+      const greenSpan = document.querySelector(".green");
+      const blueSpan = document.querySelector(".blue");
+
+      redSpan.addEventListener("mouseover", () => {
+        redSpan.style.color = "red";
+      });
+
+      greenSpan.addEventListener("mouseover", () => {
+        greenSpan.style.color = "green";
+      });
+
+      blueSpan.addEventListener("mouseover", () => {
+        blueSpan.style.color = "blue";
+      });
+    </script>
+  </body>
+</html>

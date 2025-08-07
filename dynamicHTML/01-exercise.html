@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 01</title>
+  </head>
+  <body>
+    <p class="para-el">Original Text</p>
+    <button class="btn-el">Change Text</button>
+    <script>
+      // Task: Create a simple HTML page with a paragraph. Add a button that, when clicked, changes the text of the paragraph to "Hello, world!"
+
+      // Access HTML element in JavaScript
+      const buttonElement = document.querySelector(".btn-el");
+      const paraElement = document.querySelector(".para-el");
+
+      // Add eventlistener to the button
+      buttonElement.addEventListener("click", function () {
+        paraElement.textContent = "Hello, world!";
+      });
+    </script>
+  </body>
+</html>

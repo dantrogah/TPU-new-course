@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 8</title>
+    <style>
+      table {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: left;
+      }
+
+      tr.selected {
+        background-color: lightblue;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sarah</td>
+          <td>sarah@example.com</td>
+          <td>024 563 2154</td>
+        </tr>
+        <tr>
+          <td>Linda</td>
+          <td>linda@example.com</td>
+          <td>024 253 2081</td>
+        </tr>
+        <tr>
+          <td>Paul</td>
+          <td>paul@example.com</td>
+          <td>024 152 9056</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      // Task: Create a table with multiple rows. Add JavaScript that changes the background color of a row when it is clicked. Ensure that selecting a new row returns the previously selected row to its original color.
+      const table = document.getElementById("myTable");
+      let selectedRow = null;
+
+      table.addEventListener("click", function (event) {
+        const clickedRow = event.target.closest("tr");
+
+        // skip header row
+        if (!clickedRow || clickedRow.parentNode.tagName === "THEAD") return;
+
+        // Remove previous selection
+        if (selectedRow) {
+          selectedRow.classList.remove("selected");
+        }
+
+        // Apply selection to new row
+        clickedRow.classList.add("selected");
+        selectedRow = clickedRow;
+      });
+    </script>
+  </body>
+</html>

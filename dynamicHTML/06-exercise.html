@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 6</title>
+  </head>
+  <form action="" class="form-el">
+    <input type="text" class="input-el" />
+  </form>
+  <button class="button-el">Add More Fields</button>
+  <body>
+    <!-- Task: Create a form with one input field and a button labeled "Add More Fields". Each button click should add another input field to the form.
+ -->
+
+    <script>
+      const buttonElement = document.querySelector(".button-el");
+      const formElement = document.querySelector(".form-el");
+
+      buttonElement.addEventListener("click", (e) => {
+        e.preventDefault();
+        const newInputElement = document.createElement("input");
+        formElement.appendChild(newInputElement);
+      });
+    </script>
+  </body>
+</html>

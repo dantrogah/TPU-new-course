@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 10</title>
+  </head>
+  <body>
+    <h2>Movie List</h2>
+    <input type="text" id="searchBox" placeholder="Search movies..." />
+
+    <ul id="movieList">
+      <li>The Matrix</li>
+      <li>Inception</li>
+      <li>Avatar</li>
+      <li>The Lion King</li>
+      <li>Black Panther</li>
+      <li>Avengers: Endgame</li>
+      <li>Frozen</li>
+      <li>Jurassic Park</li>
+    </ul>
+
+    <script>
+      const searchBox = document.getElementById("searchBox");
+      const movieList = document.getElementById("movieList");
+      const movies = movieList.getElementsByTagName("li");
+
+      searchBox.addEventListener("input", function () {
+        const query = this.value.toLowerCase();
+
+        for (let movie of movies) {
+          const title = movie.textContent.toLowerCase();
+          movie.style.display = title.includes(query) ? "list-item" : "none";
+        }
+      });
+    </script>
+  </body>
+</html>

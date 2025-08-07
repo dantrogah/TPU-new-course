@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input class="input-el" type="text" placeholder="Todo name" />
+    <button class="button-el">Add Item</button>
+    <ul class="list-el">
+      <li>Learn coding</li>
+      <li>Make lesson note</li>
+    </ul>
+    <script>
+      // Task: Provide a text input field and a button labeled "Add Item". When the button is clicked, add the content of the text input as a new item in an existing unordered list. Clear the input field after adding the item.
+      const inputElement = document.querySelector(".input-el");
+      const buttonElement = document.querySelector(".button-el");
+      const listElement = document.querySelector(".list-el");
+
+      buttonElement.addEventListener("click", () => {
+        const todo = inputElement.value;
+        listElement.innerHTML += `<li>${todo}</li>`;
+        inputElement.value = "";
+      });
+    </script>
+  </body>
+</html>

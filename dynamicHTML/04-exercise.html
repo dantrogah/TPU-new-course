@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 4</title>
+  </head>
+  <body>
+    <ul class="fruit-list" style="visibility: visible">
+      <li>Banana</li>
+      <li>Pineapple</li>
+      <li>Guava</li>
+    </ul>
+
+    <button class="toggle-btn">Toggle Visibility</button>
+    <script>
+      // Task: Create a list of items and a button labeled "Toggle Visibility". When the button is clicked, toggle the visibility of the list using JavaScript.
+      const listElement = document.querySelector(".fruit-list");
+      const btnElement = document.querySelector(".toggle-btn");
+
+      btnElement.addEventListener("click", () => {
+        if (listElement.style.visibility === "visible") {
+          listElement.style.visibility = "hidden";
+        } else {
+          listElement.style.visibility = "visible";
+        }
+      });
+    </script>
+  </body>
+</html>

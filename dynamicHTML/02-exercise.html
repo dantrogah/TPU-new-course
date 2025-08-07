@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 02</title>
+  </head>
+  <body>
+    <button class="buttonClick">Click Me!</button>
+    <script>
+      // Task: Add a button to your HTML that, when clicked, creates a new <div> element with some text inside it and appends this div to the body of the document.
+
+      // Access HTML element in JavaScript
+      const buttonElement = document.querySelector(".buttonClick");
+
+      // Add an event listener to the button
+      buttonElement.addEventListener("click", () => {
+        const newDiv = document.createElement("div");
+        newDiv.textContent = "New Div Created in JavaScipt.";
+        newDiv.style.border = "2px solid black";
+        newDiv.style.width = "250px";
+        newDiv.style.marginTop = "20px";
+        document.body.appendChild(newDiv);
+      });
+    </script>
+  </body>
+</html>

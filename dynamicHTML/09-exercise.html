@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 9</title>
+    <style>
+      ul {
+        list-style-type: none;
+        padding: 0;
+        max-width: 300px;
+      }
+
+      li {
+        padding: 6px;
+        border: 1px solid #ccc;
+        margin-bottom: 4px;
+      }
+
+      button {
+        margin: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Sortable Name List</h2>
+
+    <button id="sortAsc">Sort Ascending</button>
+    <button id="sortDesc">Sort Descending</button>
+
+    <ul id="nameList">
+      <li>Daniel</li>
+      <li>Grace</li>
+      <li>Michael</li>
+      <li>Sarah</li>
+      <li>John</li>
+    </ul>
+    <script>
+      // Task: Display a list of numbers or names in a <ul>. Provide buttons to sort the list ascendingly and descendingly without refreshing the page.
+
+      const nameList = document.getElementById("nameList");
+      const sortAscBtn = document.getElementById("sortAsc");
+      const sortDescBtn = document.getElementById("sortDesc");
+
+      function sortList(order) {
+        const items = Array.from(nameList.getElementsByTagName("li"));
+
+        items.sort((a, b) => {
+          const textA = a.textContent.toLowerCase();
+          const textB = b.textContent.toLowerCase();
+
+          return order === "asc"
+            ? textA.localeCompare(textB)
+            : textB.localeCompare(textA);
+        });
+
+        nameList.innerHTML = "";
+        items.forEach((item) => nameList.appendChild(item));
+      }
+
+      sortAscBtn.addEventListener("click", () => sortList("asc"));
+
+      sortDescBtn.addEventListener("click", () => sortList("desc"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 7</title>
+  </head>
+  <body>
+    <ul class="fruit-list">
+      <li>Banana <button class="remove-btn">Remove</button></li>
+      <li>Pineapple <button class="remove-btn">Remove</button></li>
+      <li>Guava <button class="remove-btn">Remove</button></li>
+    </ul>
+    <script>
+      // Task: Display an ordered list of names with a "Remove" button next to each name. When a button is clicked, remove the corresponding list item from the DOM.
+      const nameList = document.querySelector(".fruit-list");
+
+      // Use event delegation to listen for all clicks on the list
+      nameList.addEventListener("click", function (event) {
+        if (event.target.classList.contains("remove-btn")) {
+          const li = event.target.parentElement;
+          nameList.removeChild(li);
+        }
+      });
+    </script>
+  </body>
+</html>
