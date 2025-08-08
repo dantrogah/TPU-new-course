@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 8</title>
+  </head>
+  <body>
+    <script>
+      // Task: Demonstrate the use of the spread operator to merge two arrays into one. Also show how it can be used to create a copy of an array.
+      const array1 = [1, 5, 8];
+      const array2 = [6, 11, 9];
+
+      const combineArray = [...array1, ...array2];
+
+      // copy array using the spread operator
+      const copyArray = [...array1];
+
+      console.log(combineArray);
+      console.log(copyArray);
+    </script>
+  </body>
+</html>

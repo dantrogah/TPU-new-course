@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 3</title>
+  </head>
+  <body>
+    <script>
+      // Task: Create an object that includes an array of names and a method that uses an arrow function to print each name prefixed with this.title. Demonstrate how this behaves differently inside an arrow function compared to a traditional function.
+      const group = {
+        title: "Mr.",
+        names: ["John", "Mike", "Sam"],
+
+        printNames: function () {
+          console.log("Using arrow function");
+          this.names.forEach((name) => {
+            console.log(`${this.title} ${name}`);
+          });
+
+          console.log("\nUsing traditional function:");
+          this.names.forEach(
+            function (name) {
+              console.log(`${this.title} ${name}`);
+            }.bind(this)
+          );
+        },
+      };
+
+      console.log(group.printNames());
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise 5</title>
+  </head>
+  <body>
+    <script>
+      // Task: Use template literals to create a function that returns a personalized greeting message. The function should accept two parameters, name and time of day, and return a string like "Good morning, Alice!"
+
+      function sendMessage(name, time) {
+        if (time >= 5 && time < 12) {
+          return "Good morning " + name;
+        } else if (time >= 12 && time < 17) {
+          return "Good afternoon " + name;
+        } else if (time >= 17 && time < 21) {
+          return "Good evening " + name;
+        } else {
+          return "Good night " + name;
+        }
+      }
+
+      console.log(sendMessage("Vanessa", 10));
+    </script>
+  </body>
+</html>
